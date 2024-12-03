@@ -1,0 +1,346 @@
+/* META DATA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Developer details:
+    Name: Prachi Tavse
+    Role: Architect */
+
+/* Version:
+    Version: V 1.0 (2 December 2024)
+    Developers: Prachi Tavse
+    Unit test: Pass
+    Integration test: Pass */
+
+/* Description:
+    This CSS file defines the styling for the shop page, including layout and visual design elements such as color schemes, and fonts. */
+
+/* Dependencies:
+    - No external CSS libraries like Bootstrap are used.
+    - Custom styling tailored to the e-commerce platform's branding and UI design requirements. */    
+
+/* To use: Link this CSS file within the HTML file to apply the styles for the personal details section. */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Set the font family for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background: url('../assets/Infographics/background.png') no-repeat center center fixed; /* Set a fixed background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%; /* Ensure full height */
+  }
+  
+  
+  /* Brand Logo and Name (Top Left) */
+  .brand-logo {
+    position: absolute; /* Position the logo in the top-left corner */
+    top: 20px;
+    left: 20px;
+    text-align: left; /* Align text to the left */
+    z-index: 1000; /* Ensures that logo stays on top of other elements */
+  }
+  
+  .logo-placeholder {
+    display: inline-block; /* Inline-block to allow styling like width/height */
+    width: 40px; /* Width of the logo */
+    height: 40px; /* Height of the logo */
+    border-radius: 50%; /* Makes the logo circular */
+    overflow: hidden; /* Ensures any overflow content is hidden */
+    margin-bottom: 5px;
+    margin-left: 50px;
+  }
+  
+  .logo-image {
+    width: 100%; /* Image width fills the container */
+    height: 100%; /* Image height fills the container */
+    object-fit: cover; /* Ensures the image scales proportionally */
+  }
+  
+  h1 {
+    font-family: 'Rakkas', serif; /* Font for the brand name */
+    font-size: 24px; /* Size of the brand name */
+    font-weight: 700; /* Bold font weight */
+    margin: 0; /* Remove default margin */
+    color: #000; /* Black text color */
+  }
+  
+  .fashion-text {
+    font-family: 'Faculty Glyphic', serif; /* Font for the tagline */
+    font-size: 14px; /* Tagline font size */
+    margin-top: -5px; /* Negative margin to adjust positioning */
+    margin-left: 30px;
+    text-transform: uppercase; /* Converts text to uppercase */
+    color: #555; /* Gray text color */
+    font-weight: 400; /* Normal font weight */
+  }
+  
+  
+  /* Navigation Bar */
+  .navbar {
+    position: fixed; /* Fix navbar position */
+    top: 130px; /* Distance from the top */
+    left: 0; /* Align navbar to the left */
+    width: 200px; /* Fixed width for the navbar */
+    height: 100vh; /* Full viewport height */
+    background-color: transparent; /* Transparent background */
+    color: black; /* Black text color */
+    display: flex; /* Flexbox for arranging content */
+    flex-direction: column; /* Stack items vertically */
+    padding-top: 20px; /* Padding at the top */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  /* Navbar links (buttons look) */
+  .navbar a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Black text color */
+    padding: 15px; /* Padding inside the link */
+    text-align: center; /* Center align the text */
+    font-size: 18px; /* Font size for links */
+    border: 1px solid transparent; /* Transparent border initially */
+    background-color: rgba(0, 0, 0, 0.1); /* Light gray background */
+    margin: 5px 0; /* Spacing between links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transition effects */
+  }
+  
+  /* Hover Effect */
+  .navbar a:hover {
+    background-color: black; /* Change background to black on hover */
+    color: white; /* Change text color to white on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+  }
+  
+  /* Active Link Styling */
+  .navbar a.active {
+    background-color: black; /* Highlight background for active link */
+    color: white; /* White text for active link */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for active state */
+  }
+  
+  /* User Profile Section (Profile Image + Name) */
+  .navbar .user-profile {
+    display: flex; /* Arrange profile image and name in a row */
+    align-items: center; /* Vertically center-align items */
+    margin-bottom: 5px; /* Spacing below profile section */
+    margin-top: 0; /* Remove extra space above */
+  }
+  
+  .navbar .user-profile img {
+    width: 40px; /* Profile image width */
+    height: 40px; /* Profile image height */
+    border-radius: 50%; /* Make profile image circular */
+    margin-right: 10px; /* Space between image and name */
+    object-fit: cover; /* Ensures the image is not distorted */
+  }
+  
+  .navbar .user-profile .user-name {
+    font-family: 'Rakkas', serif; /* Font for user name */
+    font-size: 30px; /* Font size */
+    font-weight: 600; /* Semi-bold font weight */
+    color: black; /* Black text color */
+    margin-top: 20px;
+  }
+  
+  .navbar .user-profile .first-name {
+    font-weight: 100; /* Lighter font weight for first name */
+    text-transform: capitalize; /* First letter uppercase */
+  }
+  
+  .navbar .user-profile .last-name {
+    font-weight: 600; /* Bold font weight for last name */
+    text-transform: uppercase; /* Convert last name to uppercase */
+  }
+
+    /* Add styling for category navbar */
+  .category-navbar {
+    /* Center the buttons horizontally */
+    display: flex;
+    justify-content: center;
+    /* Space between buttons */
+    gap: 15px;
+    /* Add margin above and below the navbar */
+    margin: 20px 0;
+  }
+
+  /* Style for category buttons */
+  .category-navbar button {
+    /* Padding for button content */
+    padding: 10px 20px;
+    /* Font size of the button text */
+    font-size: 16px;
+    /* Light gray background for default state */
+    background-color: lightgray;
+    /* Light border around the buttons */
+    border: 1px solid #ccc;
+    /* Rounded corners for the buttons */
+    border-radius: 5px;
+    /* Pointer cursor on hover */
+    cursor: pointer;
+    /* Smooth transition for hover effects */
+    transition: background-color 0.05s, color 0.05s;
+  }
+
+  /* Change background and text color when the button is hovered */
+  .category-navbar button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  /* Style for the active button */
+  .category-navbar button.active {
+    /* Black background for the active state */
+    background-color: black;
+    /* White text color for the active state */
+    color: white;
+  }
+
+  /* Style for the image wrapper */
+  .image-wrapper {
+    /* Padding around the wrapper */
+    padding: 20px;
+    /* Allow the wrapper to expand and fill the space */
+    flex: 1;
+    /* Center content horizontally and vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Style for the image gallery */
+  .image-gallery {
+    /* Use a grid layout for the gallery */
+    display: grid;
+    /* Define three equal-width columns */
+    grid-template-columns: repeat(3, 1fr);
+    /* Add space between images */
+    gap: 20px;
+    /* Center-align grid items */
+    justify-items: center;
+  }
+
+  /* Style for individual image containers */
+  .image-container {
+    /* Set fixed dimensions for the container */
+    width: 150px;
+    height: 150px;
+    /* Hide any overflowing content (e.g., from images) */
+    overflow: hidden;
+    /* Rounded corners for the container */
+    border-radius: 10px;
+    /* White background for the container */
+    background-color: #fff;
+    /* Add a subtle shadow for a 3D effect */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style for the images within the container */
+  .image-container img {
+    /* Make the image fill the container */
+    width: 100%;
+    height: 100%;
+    /* Ensure the image aspect ratio is maintained */
+    object-fit: cover;
+  }
+
+  /* Modal Overlay */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  /* Close Button */
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close-btn:hover {
+    color: #000;
+  }
+
+  /* Add to Cart Button */
+  .add-to-cart-btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .add-to-cart-btn:hover {
+    background-color: darkgray;
+  }
+
+
+  footer {
+    position: fixed; /* Fix it at the bottom of the page */
+    bottom: 0; /* Align footer at the bottom */
+    width: 100%; /* Full width */
+    padding: 20px 0; /* Add padding */
+    text-align: center; /* Center the footer text */
+    color: gray; /* Gray text color */
+    background: none; /* No background */
+    margin-top: 50px;
+  }
+  
+  .footer-separator {
+    width: 100%; /* Full page width */
+    height: 1px; /* Thin separator line */
+    background-color: lightgray; /* Light gray line color */
+    margin-bottom: 20px; /* Space below the separator */
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    display: flex; /* Flexbox for link arrangement */
+    justify-content: center; /* Center the links horizontally */
+    align-items: center; /* Vertically align the links */
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+  }
+  
+  .footer-links a {
+    color: #7a7a7a; /* Gray link color */
+    margin: 0 20px;
+  
+  /* Spacing between links */
+    font-size: 16px; /* Font size for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .footer-links a:hover {
+    color: black; /* Change color to black on hover */
+    font-size: 17px;
+  }

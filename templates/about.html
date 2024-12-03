@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Define character encoding -->
+  <meta charset="UTF-8">
+  
+  <!-- Ensure responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Page Title -->
+  <title>About Us - Peoplely Fashion</title>
+  
+  <!-- External CSS for styling -->
+  <link rel="stylesheet" href="../static/css/about.css">
+  
+  <!-- Google Fonts Integration -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Jaro:opsz@6..72&family=Rakkas&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation back to homepage -->
+  <header>
+    <nav>
+      <a href="{{ url_for('homepage') }}" class="back-home">← Back to Home</a>
+    </nav>
+  </header>
+
+  <!-- About Us Content Section -->
+  <section class="about-us">
+    <h1>About Us</h1>
+    <p>Welcome to <strong>Peoplely Fashion</strong>, your premier destination for trendy and sustainable fashion. We are committed to helping you express your unique style with curated collections that blend comfort, elegance, and individuality.</p>
+    <p>At Peoplely Fashion, our mission is to inspire confidence through clothing while prioritizing eco-conscious practices. Every product is thoughtfully designed and ethically sourced to bring you high-quality pieces that make a statement.</p>
+    <p>Join us on our journey to redefine fashion with innovation, inclusivity, and a touch of modern sophistication.</p>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-separator"></div>
+    <!-- Links to additional informational pages -->
+    <div class="footer-links">
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('contact') }}">Contact Us</a>
+      <a href="{{ url_for('privacypolicy') }}">Privacy Policy</a>
+      <a href="{{ url_for('refundpolicy') }}">Refund Policy</a>
+      <a href="{{ url_for('terms') }}">Terms & Conditions</a>
+    </div>
+  </footer>
+</body>
+</html>

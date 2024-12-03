@@ -1,0 +1,109 @@
+    <!-- META DATA -->
+    <!--
+    Developer details: 
+        Name: Khushboo Mittal
+        Role: Architect
+        
+    Version:
+        Version: V 1.0 (26 November 2024)
+        Developers: Khushboo Mittal
+        Unit test: Pass
+        Integration test: Pass
+
+    Description: 
+        This is the homepage for a modern, interactive e-commerce website. 
+        It offers AI-powered live predictions and provides products like shoes, apparels, bags, etc. 
+        Users can explore a wide range of items and get personalized recommendations based on their preferences.
+   
+  Dependencies: 
+        - Environment:     
+            - HTML5
+            - CSS3
+            - JavaScript (ES6+)
+          
+  To run: Simply open the homepage.html file in your browser.
+  --->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Define the character encoding for the document -->
+  <meta charset="UTF-8">
+  
+  <!-- Ensure the webpage is responsive on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Webpage title displayed in the browser tab -->
+  <title>Peoplely Fashion</title>
+  
+  <!-- Link to the external CSS file for styling -->
+  <link rel="stylesheet" href="../static/css/homepage.css">
+  
+  <!-- Preconnect to Google Fonts to optimize font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Import custom fonts from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Jaro:opsz@6..72&family=Rakkas&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Sign Up Button with an onClick event to redirect the user -->
+  <button class="signup-btn" onclick="redirectToPersonalDetails()">Sign Up Now</button>
+
+  <!-- Brand Logo and Name Section -->
+  <div class="brand-logo">
+    <!-- Placeholder for the logo image -->
+    <div class="logo-placeholder">
+      <img class="logo-image" src="../assets/logo.png" alt="Logo"> <!-- Display brand logo -->
+    </div>
+    <!-- Brand name -->
+    <h1>P E O P L E L Y</h1>
+    <p class="fashion-text">F a s h i o n</p>
+  </div>
+  
+  <!-- Product Carousel Section -->
+  <div class="carousel-wrapper">
+    <!-- Left navigation arrow for the carousel -->
+    <button class="carousel-arrow left" id="prevArrow">←</button>
+    
+    <!-- Carousel displaying product images -->
+    <div class="carousel">
+      {% for image_id in image_ids %}
+        <div class="carousel-item">
+          <img src="{{ url_for('get_image', image_id=image_id) }}" alt="Product Image"> 
+        </div>
+      {% endfor %}
+    </div>
+  
+    <!-- Right navigation arrow for the carousel -->
+    <button class="carousel-arrow right" id="nextArrow">→</button>
+  </div>
+  
+  <!-- Login Section -->
+  <div class="login-container">
+    <!-- Input field for username -->
+    <input type="text" id="username" class="input-field" placeholder="Username">
+    <!-- Input field for password -->
+    <input type="password" id="password" class="input-field" placeholder="Password">
+    <!-- Login button with an onClick event to redirect the user -->
+    <button class="login-button" onclick="redirectToRecommended()">Login</button>
+  </div>
+
+  <!-- Footer Section with Links -->
+  <footer>
+    <!-- Separator line for footer -->
+    <div class="footer-separator"></div>
+    <!-- Links to various informational pages -->
+    <div class="footer-links">
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('contact') }}">Contact Us</a>
+      <a href="{{ url_for('privacypolicy') }}">Privacy Policy</a>
+      <a href="{{ url_for('refundpolicy') }}">Refund Policy</a>
+      <a href="{{ url_for('terms') }}">Terms & Conditions</a>
+    </div>
+  </footer>
+
+  <!-- External JavaScript file for interactivity -->
+  <script src="../static/js/homepage.js"></script>
+</body>
+</html>

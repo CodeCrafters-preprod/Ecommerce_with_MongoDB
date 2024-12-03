@@ -1,0 +1,350 @@
+/* META DATA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Developer details:
+    Name: Harshita Jangde
+    Role: Architect */
+
+/* Version:
+    Version: V 1.0 (2 December 2024)
+    Developers: Harshita Jangde
+    Unit test: Pass
+    Integration test: Pass */
+
+/* Description:
+    This CSS file defines the styling for the personal details section of a user,
+    including layout and visual design elements such as color schemes, and fonts. */
+
+/* Dependencies:
+    - No external CSS libraries like Bootstrap are used.
+    - Custom styling tailored to the e-commerce platform's branding and UI design requirements. */    
+
+/* To use: Link this CSS file within the HTML file to apply the styles for the personal details section. */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Set the font family for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background: url('../assets/Infographics/background.png') no-repeat center center fixed; /* Set a fixed background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+}
+
+/* Brand Logo and Name (Top Left) */
+.brand-logo {
+    position: absolute; /* Position the logo absolutely within the page */
+    top: 20px; /* Set distance from the top */
+    left: 20px; /* Set distance from the left */
+    text-align: left; /* Align the logo text to the left */
+    z-index: 1000; /* Ensure it is always on top of other elements */
+}
+
+.logo-placeholder {
+    display: inline-block; /* Allow inline styling with block properties */
+    width: 40px; /* Set the width of the logo container */
+    height: 40px; /* Set the height of the logo container */
+    border-radius: 50%; /* Make the logo container circular */
+    overflow: hidden; /* Clip any overflowing content */
+    margin-bottom: 5px; /* Add space below the logo */
+    margin-left: 50px; /* Add left margin for spacing */
+}
+
+.logo-image {
+    width: 100%; /* Ensure the image fills the container width */
+    height: 100%; /* Ensure the image fills the container height */
+    object-fit: cover; /* Scale the image proportionally to fill the container */
+}
+
+h1 {
+    font-family: 'Rakkas', serif; /* Use a serif font for a stylish brand name */
+    font-size: 24px; /* Set the font size of the brand name */
+    font-weight: 700; /* Use a bold font weight */
+    margin: 0; /* Remove any default margin */
+    color: #000; /* Set the text color to black */
+}
+
+.fashion-text {
+    font-family: 'Faculty Glyphic', serif; /* Use a specific serif font for the tagline */
+    font-size: 14px; /* Set the font size for the tagline */
+    margin-top: -5px; /* Adjust the positioning using a negative margin */
+    margin-left: 30px; /* Add left margin for alignment */
+    text-transform: uppercase; /* Convert the text to uppercase */
+    color: #555; /* Set the text color to a light gray */
+    font-weight: 400; /* Use a normal font weight */
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed; /* Fix the navbar to the screen */
+    top: 130px; /* Position it below the logo */
+    left: 0; /* Align it to the left edge */
+    width: 200px; /* Set a fixed width for the navbar */
+    height: 100vh; /* Make the navbar span the full viewport height */
+    background-color: transparent; /* Set a transparent background */
+    color: black; /* Set the text color to black */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack navbar items vertically */
+    padding-top: 20px; /* Add padding at the top */
+    padding-left: 20px; /* Add padding on the left */
+    padding-right: 20px; /* Add padding on the right */
+}
+
+/* Navbar links (buttons look) */
+.navbar a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Set text color to black */
+    padding: 15px; /* Add padding inside the links */
+    text-align: center; /* Center align the text */
+    font-size: 18px; /* Set the font size */
+    border: 1px solid transparent; /* Use a transparent border by default */
+    background-color: rgba(0, 0, 0, 0.1); /* Set a light gray background */
+    margin: 5px 0; /* Add vertical spacing between links */
+    border-radius: 5px; /* Add rounded corners */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Add smooth transitions for hover effects */
+}
+
+/* Hover Effect */
+.navbar a:hover {
+    background-color: black; /* Change the background to black on hover */
+    color: white; /* Change the text color to white on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect on hover */
+}
+
+/* Active Link Styling */
+.navbar a.active {
+    background-color: black; /* Highlight the active link background */
+    color: white; /* Set the text color to white for active links */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect for the active state */
+}
+
+/* User Profile Section (Profile Image + Name) */
+.navbar .user-profile {
+    display: flex; /* Arrange the profile image and name in a row */
+    align-items: center; /* Center align items vertically */
+    margin-bottom: 5px; /* Add spacing below the profile section */
+    margin-top: 0; /* Remove extra space above */
+}
+
+.navbar .user-profile img {
+    width: 40px; /* Set the width of the profile image */
+    height: 40px; /* Set the height of the profile image */
+    border-radius: 50%; /* Make the profile image circular */
+    margin-right: 10px; /* Add space between the image and name */
+    object-fit: cover; /* Ensure the image scales without distortion */
+}
+
+.navbar .user-profile .user-name {
+    font-family: 'Rakkas', serif; /* Use the same serif font for consistency */
+    font-size: 30px; /* Set the font size for the user name */
+    font-weight: 600; /* Use semi-bold font weight */
+    color: black; /* Set the text color to black */
+    margin-top: 20px; /* Add spacing above */
+}
+
+.navbar .user-profile .first-name {
+    font-weight: 100; /* Use a lighter font weight for the first name */
+    text-transform: capitalize; /* Capitalize the first letter */
+}
+
+.navbar .user-profile .last-name {
+    font-weight: 600; /* Use bold font weight for the last name */
+    text-transform: uppercase; /* Convert the last name to uppercase */
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 250px; /* Create space to accommodate the navbar */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center align the content horizontally */
+    align-items: center; /* Center align the content vertically */
+    padding: 20px; /* Add padding around the content */
+    height: calc(100vh - 150px); /* Adjust height for navbar and footer */
+    gap: 20px; /* Add spacing between content items */
+}
+
+/* Details Section */
+.details-section {
+    margin-top: 60px; /* Add top margin */
+    padding: 10px; /* Add padding inside the section */
+    background-color: rgba(169, 169, 169, 0.2); /* Set a transparent gray background */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+}
+
+.details-section h3 {
+    margin-bottom: 20px; /* Add spacing below the section header */
+}
+
+/* Form Inputs */
+.form-group {
+    display: flex; /* Arrange input and label in a row */
+    align-items: center; /* Center align vertically */
+    gap: 10px; /* Add spacing between label and input */
+    margin-bottom: 10px; /* Add spacing below the form group */
+}
+
+input {
+    padding: 10px; /* Add padding inside inputs */
+    font-size: 14px; /* Set the font size */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    width: 100px; /* Default input width */
+    background-color: rgba(75, 73, 73, 0.2); /* Set a transparent gray background */
+    border: 0.5px solid #000; /* Add a thin border */
+}
+/* Label Styling */
+label {
+    font-size: 14px; /* Set label font size */
+    color: #555; /* Set label color to a muted gray */
+    display: inline-block; /* Ensure label takes its own space */
+}
+
+/* Input Focus Styling */
+input:focus {
+    border-color: #4f1cb5; /* Change border color to purple on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Card Section Styling */
+.card-section {
+    margin-top: 20px; /* Add space above the card section */
+    min-width: 250px; /* Set minimum width */
+    padding: 10px; /* Add internal spacing */
+    background-color: rgba(169, 169, 169, 0.2); /* Transparent gray background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.card-section h3 {
+    font-size: 24px; /* Larger font for section headings */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+/* Card Styling */
+.card {
+    display: flex; /* Use flex layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align items at the top */
+    padding: 10px; /* Add internal spacing */
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.card img {
+    width: 250px; /* Fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure responsiveness */
+    object-fit: contain; /* Scale the image proportionally */
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+/* Button Group Styling */
+.button-group {
+    display: flex; /* Use flex layout */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 5px; /* Space between buttons */
+    margin-top: -22px; /* Adjust top margin */
+}
+
+.button-group button {
+    padding: 5px; /* Add internal spacing */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for interaction */
+    width: 50%; /* Set button width to half of the container */
+}
+
+/* Specific Button Groups */
+.details-button, .edit-add-card, .edit-renew-button {
+    display: flex; /* Use flex layout */
+    gap: 5px; /* Space between elements */
+    width: 100%; /* Full container width */
+    margin-bottom: 5px; /* Add space below */
+}
+
+.details-button {
+    margin-top: 20px; /* Add top margin */
+    width: 60%; /* Set width to 60% of the container */
+}
+
+.subscription-button {
+    margin-top: 30px; /* Add more top margin */
+    width: 100%; /* Full container width */
+}
+
+/* Individual Button Styling */
+.button-group #save-button, #edit-card, #add-card, #edit-button, #support-phone, #support-email, #support-chat {
+    background-color: #000; /* Black background for specific buttons */
+}
+
+.button-group #raise-support {
+    background-color: #4f1cb5; /* Purple background for raise support button */
+    width: 100%; /* Full width */
+}
+
+.button-group #block-card {
+    background-color: #f01e1e; /* Red background for block card button */
+}
+
+.button-group #renew-button {
+    background-color: #28a745; /* Green background for renew button */
+}
+
+.button-group button:hover {
+    background-color: #0056b3; /* Blue background on hover for all buttons */
+}
+
+/* Support Buttons Styling */
+.button-group #support-phone, #support-email, #support-chat {
+    width: 100%; /* Full width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); /* Darker shadow for emphasis */
+}
+
+/* Support Section Styling */
+.support-button {
+    display: flex; /* Use flex layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 50px; /* Large gap between elements */
+    padding: 20px; /* Add padding for spacing */
+}
+
+
+/* Footer Styling */
+footer {
+    position: absolute; /* Fix it at the bottom of the page */
+    bottom: 0; /* Align footer at the bottom */
+    width: 100%; /* Full width to span across the page */
+    padding: 20px 0; /* Add padding to create space around the footer */
+    text-align: center; /* Center-align the footer content */
+    color: gray; /* Set text color to gray */
+    background: none; /* No background color for the footer */
+}
+
+.footer-separator {
+    width: 100%; /* Full width separator to span across the page */
+    height: 1px; /* Thin line for the separator */
+    background-color: lightgray; /* Light gray color for the separator */
+    margin-bottom: 20px; /* Add space below the separator */
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex; /* Use flexbox for arranging the links */
+    justify-content: center; /* Center the links horizontally */
+    align-items: center; /* Vertically align the links */
+    flex-wrap: wrap; /* Allow links to wrap onto a new line on smaller screens */
+}
+
+.footer-links a {
+    color: #7a7a7a; /* Set link text color to gray */
+    margin: 0 20px; /* Add spacing between links */
+    font-size: 16px; /* Font size for footer links */
+    text-decoration: none; /* Remove underlining from links */
+    transition: color 0.3s ease; /* Add smooth transition effect for color change */
+}
+
+.footer-links a:hover {
+    color: black; /* Change link color to black on hover */
+    font-size: 17px; /* Slightly increase font size on hover */
+}

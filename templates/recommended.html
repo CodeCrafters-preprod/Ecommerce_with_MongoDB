@@ -1,0 +1,121 @@
+<!-- META DATA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!-- Developer details:
+    Name: Khushboo Mittal
+    Role: Architect -->
+
+<!-- Version:
+    Version: V 1.0 (26 November 2024)
+    Developers: Khushboo Mittal
+    Unit test: Pass
+    Integration test: Pass -->
+
+<!-- Description:
+    This HTML file represents the recommended products section of a modern, AI-powered e-commerce homepage. 
+    It dynamically displays personalized product recommendations based on the user's preferences, browsing history, and behavior. 
+    The section features a product carousel/slider with interactive elements such as smooth scrolling, hover effects, and product previews. 
+   -->
+
+<!-- Dependencies:
+    - Custom CSS for styling and layout.
+    - Custom JavaScript (included in `recommended.js`) for interactivity, such as carousel functionality and live predictions.
+-->
+
+<!-- To use: Link this HTML file as a section within the homepage to display recommended products to the users. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Define the character encoding for the document -->
+  <meta charset="UTF-8">
+  
+  <!-- Ensure the webpage is responsive on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Title of the webpage displayed in the browser tab -->
+  <title>Recommended Page</title>
+  
+  <!-- Link to the external CSS file for styling -->
+  <link rel="stylesheet" href="../static/css/recommended.css">
+  
+  <!-- Preconnect to Google Fonts to optimize font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Import custom fonts from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Jaro:opsz@6..72&family=Rakkas&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Brand Logo and Name Section -->
+  <div class="brand-logo">
+    <!-- Placeholder for the logo image -->
+    <div class="logo-placeholder">
+      <img class="logo-image" src="../assets/logo.png" alt="Logo"> <!-- Display brand logo -->
+    </div>
+    <!-- Brand name -->
+    <h1>P E O P L E L Y</h1>
+    <p class="fashion-text">F a s h i o n</p>
+  </div>
+
+  <!-- Navigation Bar Section -->
+  <div class="navbar">
+    <!-- User Profile Section -->
+    <div class="user-profile">
+      <img src="../assets/Infographics/Profiles.jpg" alt="User Profile"> <!-- Display user profile image -->
+      <h2 class="user-name">
+        <!-- Display user's first and last name -->
+        <span class="first-name">Chris</span> <span class="last-name">DAVE</span>
+      </h2>
+    </div>
+    <!-- Navigation links to other sections of the website -->
+    <a href="{{ url_for('personal_details') }}">Personal Details</a>
+    <a href="{{ url_for('recommended') }}">Recommended</a>
+    <a href="{{ url_for('order_history') }}">Order History</a>
+    <a href="{{ url_for('shop') }}">Shop</a>
+    <a href="{{ url_for('cart') }}" id="cart-link">Cart (0)</a>
+    <a href="{{ url_for('homepage') }}">Logout</a>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Carousel Wrapper Section -->
+    <div class="carousel-wrapper">
+        <!-- Left navigation arrow for the carousel -->
+        <button class="carousel-arrow left" id="prevArrow">←</button>
+        
+        <!-- Carousel containing product images -->
+        <div class="carousel">
+          {% for image_id in image_ids %}
+            <div class="carousel-item">
+              <img src="{{ url_for('get_image', image_id=image_id) }}" alt="Product Image"> 
+            </div>
+          {% endfor %}
+        </div>
+        <!-- Right navigation arrow for the carousel -->
+        <button class="carousel-arrow right" id="nextArrow">→</button>
+    </div>
+  </div>
+      
+  <!-- Footer Section -->
+  <footer>
+    <!-- Separator line for the footer -->
+    <div class="footer-separator"></div>
+    <!-- Links to additional informational pages -->
+    <div class="footer-links">
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('contact') }}">Contact Us</a>
+      <a href="{{ url_for('privacypolicy') }}">Privacy Policy</a>
+      <a href="{{ url_for('refundpolicy') }}">Refund Policy</a>
+      <a href="{{ url_for('terms') }}">Terms & Conditions</a>
+    </div>
+  </footer>
+  
+  <!-- External JavaScript file for interactivity -->
+  <script src="../static/js/recommended.js"></script>
+
+</body>
+</html>
+

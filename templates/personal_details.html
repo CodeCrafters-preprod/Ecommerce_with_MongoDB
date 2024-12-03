@@ -1,0 +1,227 @@
+<!-- META DATA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!-- Developer details:
+    Name: Harshita Jangde
+    Role: Architect -->
+
+<!-- Version:
+    Version: V 1.0 (2 December 2024)
+    Developers: Harshita Jangde
+    Unit test: Pass
+    Integration test: Pass -->
+
+<!-- Description:
+    This HTML file represents the personal details section of a user. 
+   -->
+
+<!-- Dependencies:
+    - Custom CSS for styling and layout.
+    - Custom JavaScript (included in `recommended.js`) for interactivity, such as carousel functionality and live predictions.
+-->
+
+<!-- To use: Link this HTML file as a section within the homepage to display personal details to the users. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata and font preloading -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Details</title>
+  <!-- Link to custom styles -->
+  <link rel="stylesheet" href="../static/css/personal_details.css">
+  <!-- Preconnecting to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Jaro:opsz@6..72&family=Rakkas&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Brand Logo and Name Section -->
+  <div class="brand-logo">
+    <!-- Placeholder for the logo image -->
+    <div class="logo-placeholder">
+      <img class="logo-image" src="../assets/logo.png" alt="Logo"> <!-- Display brand logo -->
+    </div>
+    <!-- Brand name and tagline -->
+    <h1>P E O P L E L Y</h1>
+    <p class="fashion-text">F a s h i o n</p>
+  </div>
+
+  <!-- Navigation bar with user profile and links -->
+  <div class="navbar">
+    <div class="user-profile">
+      <!-- User profile picture -->
+      <img src="../assets/Infographics/Profiles.jpg" alt="User Profile">
+      <h2 class="user-name">
+        <!-- Display user's first and last name -->
+        <span class="first-name">chris</span> <span class="last-name">DAVE</span>
+      </h2>
+    </div>
+    <!-- Navigation links -->
+    <a href="{{ url_for('personal_details') }}">Personal Details</a>
+    <a href="{{ url_for('recommended') }}">Recommended</a>
+    <a href="{{ url_for('order_history') }}">Order History</a>
+    <a href="{{ url_for('shop') }}">Shop</a>
+    <a href="{{ url_for('cart') }}" id="cart-link">Cart (0)</a>
+    <a href="{{ url_for('homepage') }}">Logout</a>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Personal Details Section -->
+    <div class="details-section">
+      <h3>Personal Details</h3>
+      <!-- Form to display and edit personal details -->
+      <form>
+        <!-- Full name field -->
+        <div class="form-group">
+          <input type="text" value="Chris Dave">
+          <label>Full Name</label>
+        </div>
+
+        <!-- Email field -->
+        <div class="form-group">
+          <input type="email" value="cdave@fakeemail.com">
+          <label>Email ID</label>
+        </div>
+
+        <!-- Phone field -->
+        <div class="form-group">
+          <input type="text" value="+91 1234 5678">
+          <label>Phone</label>
+        </div>
+
+        <!-- Address field -->
+        <div class="form-group">
+          <input type="text" value="#12, Fake tower, Fake street, Fake area">
+          <label>Address</label>
+        </div>
+
+        <!-- City field -->
+        <div class="form-group">
+          <input type="text" value="123456">
+          <label>City</label>
+        </div>
+
+        <!-- State field -->
+        <div class="form-group">
+          <input type="text" value="Big State">
+          <label>State</label>
+        </div>
+
+        <!-- Country field -->
+        <div class="form-group">
+          <input type="text" value="Djibouti">
+          <label>Country</label>
+        </div>
+
+        <!-- Secret code field -->
+        <div class="form-group">
+          <input type="text" value="164">
+          <label>Secret Code</label>
+        </div>
+
+        <!-- Buttons to save or raise support -->
+        <div class="button-group">
+          <div class="details-button">
+            <button type="submit" id="save-button">Save</button>
+            <button type="button" id="raise-support">Raise Support</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Credit Card Section -->
+    <div class="card-section">
+      <h3>Credit Card</h3>
+      <!-- Credit card details -->
+      <div class="card">
+        <img src="../assets/Infographics/Credit Card.png" alt="Credit Card">
+        <div class="button-group">
+          <!-- Buttons for card actions -->
+          <div class="edit-add-card">
+            <button id="edit-card">Edit</button>
+            <button id="add-card">Add New Card</button>
+          </div>
+          <button id="raise-support">Raise Support</button>
+          <button id="block-card">Block Card</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subscription Section -->
+    <div class="subscription-section">
+      <div class="details-section">
+        <h3>Subscription</h3>
+        <!-- Form to display subscription details -->
+        <form>
+          <!-- Subscription type -->
+          <div class="form-group">
+            <input type="text" value="Silver">
+            <label>Type</label>
+          </div>
+
+          <!-- Subscription start date -->
+          <div class="form-group">
+            <input type="text" value="1 Jan 2024">
+            <label>Start</label>
+          </div>
+
+          <!-- Subscription end date -->
+          <div class="form-group">
+            <input type="text" value="31 Dec 2024">
+            <label>End</label>
+          </div>
+
+          <!-- Auto renewal status -->
+          <div class="form-group">
+            <input type="text" value="No">
+            <label>Auto Renewal</label>
+          </div>
+
+          <!-- Buttons for subscription actions -->
+          <div class="button-group">
+            <div class="subscription-button">
+              <div class="edit-renew-button">
+                <button id="edit-button">Edit</button>
+                <button id="renew-button">Renew</button>
+              </div>
+              <button id="raise-support">Raise Support</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Support Section -->
+    <div class="support-section">
+      <div class="details-section">
+        <h3>Support</h3>
+        <!-- Support action buttons -->
+        <div class="button-group">
+          <div class="support-button">
+            <button id="support-phone">Support Over Phone</button>
+            <button id="support-email">Support Over Email</button>
+            <button id="support-chat">Support Over Chat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <!-- Footer links to site policies and information -->
+    <div class="footer-separator"></div>
+    <div class="footer-links">
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('contact') }}">Contact Us</a>
+      <a href="{{ url_for('privacypolicy') }}">Privacy Policy</a>
+      <a href="{{ url_for('refundpolicy') }}">Refund Policy</a>
+      <a href="{{ url_for('terms') }}">Terms & Conditions</a>
+    </div>
+  </footer>
+  <!-- Link to custom JavaScript -->
+  <script src="../static/js/personal_details.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+/* 
+<!-- META DATA -->
+<!--
+Developer Details:
+    Name: Tanisha Priya
+    Role: Frontend Developer
+
+Version:
+    Version: V 1.0 (2 December 2024)
+    Developers: Tanisha Priya, Prachi Tavse
+    Unit Test: Pass
+    Integration Test: Pass
+
+Description:
+    This is the shopping cart page for the Peoplely Fashion e-commerce platform.
+    Users can view their selected items, update quantities, and remove items from the cart.
+    The page displays item details like name, price, and expected delivery date, providing a clear and intuitive shopping experience.
+
+Dependencies:
+    - Environment:
+        - HTML5
+        - CSS3
+        - JavaScript (ES6+)
+
+To Run:
+    Open the `cart.html` file in a modern web browser.
+--> */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Set the font family for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background: url('../assets/Infographics/background.png') no-repeat center center fixed; /* Set a fixed background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    display: flex; /* Use flexbox to create a side-by-side layout */
+    height: 100vh; /* Ensure the body takes full viewport height */
+}
+
+/* Brand Logo and Name (Top Left) */
+.brand-logo {
+    position: absolute; /* Position the logo in the top-left corner */
+    top: 20px;
+    left: 20px;
+    text-align: left; /* Align text to the left */
+    z-index: 1000; /* Ensures that logo stays on top of other elements */
+}
+
+.logo-placeholder {
+    display: inline-block; /* Inline-block to allow styling like width/height */
+    width: 40px; /* Width of the logo */
+    height: 40px; /* Height of the logo */
+    border-radius: 50%; /* Makes the logo circular */
+    overflow: hidden; /* Ensures any overflow content is hidden */
+    margin-bottom: 5px;
+    margin-left: 50px;
+}
+
+.logo-image {
+    width: 100%; /* Image width fills the container */
+    height: 100%; /* Image height fills the container */
+    object-fit: cover; /* Ensures the image scales proportionally */
+}
+
+h1 {
+    font-family: 'Rakkas', serif; /* Font for the brand name */
+    font-size: 24px; /* Size of the brand name */
+    font-weight: 700; /* Bold font weight */
+    margin: 0; /* Remove default margin */
+    color: #000; /* Black text color */
+}
+
+.fashion-text {
+    font-family: 'Faculty Glyphic', serif; /* Font for the tagline */
+    font-size: 14px; /* Tagline font size */
+    margin-top: -5px; /* Negative margin to adjust positioning */
+    margin-left: 30px;
+    text-transform: uppercase; /* Converts text to uppercase */
+    color: #555; /* Gray text color */
+    font-weight: 400; /* Normal font weight */
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed; /* Fix navbar position */
+    top: 130px; /* Distance from the top */
+    left: 0; /* Align navbar to the left */
+    width: 200px; /* Fixed width for the navbar */
+    height: 100vh; /* Full viewport height */
+    background-color: transparent; /* Transparent background */
+    color: black; /* Black text color */
+    display: flex; /* Flexbox for arranging content */
+    flex-direction: column; /* Stack items vertically */
+    padding-top: 20px; /* Padding at the top */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Black text color */
+    padding: 15px; /* Padding inside the link */
+    text-align: center; /* Center align the text */
+    font-size: 18px; /* Font size for links */
+    border: 1px solid transparent; /* Transparent border initially */
+    background-color: rgba(0, 0, 0, 0.1); /* Light gray background */
+    margin: 5px 0; /* Spacing between links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transition effects */
+}
+
+.navbar a:hover {
+    background-color: black; /* Change background to black on hover */
+    color: white; /* Change text color to white on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+/* Active Link Styling */
+.navbar a.active {
+    background-color: black; /* Highlight background for active link */
+    color: white; /* White text for active link */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for active state */
+}
+
+/* User Profile Section (Profile Image + Name) */
+.navbar .user-profile {
+    display: flex; /* Arrange profile image and name in a row */
+    align-items: center; /* Vertically center-align items */
+    margin-bottom: 5px; /* Spacing below profile section */
+    margin-top: 0; /* Remove extra space above */
+}
+
+.navbar .user-profile img {
+    width: 40px; /* Profile image width */
+    height: 40px; /* Profile image height */
+    border-radius: 50%; /* Make profile image circular */
+    margin-right: 10px; /* Space between image and name */
+    object-fit: cover; /* Ensures the image is not distorted */
+}
+
+.navbar .user-profile .user-name {
+    font-family: 'Rakkas', serif; /* Font for user name */
+    font-size: 30px; /* Font size */
+    font-weight: 600; /* Semi-bold font weight */
+    color: black; /* Black text color */
+    margin-top: 20px;
+}
+
+.navbar .user-profile .first-name {
+    font-weight: 100; /* Lighter font weight for first name */
+    text-transform: capitalize; /* First letter uppercase */
+}
+
+.navbar .user-profile .last-name {
+    font-weight: 600; /* Bold font weight for last name */
+    text-transform: uppercase; /* Convert last name to uppercase */
+}
+
+/* Main Content Area (Images and Details) */
+.cart-container {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: flex-start;
+    align-items: right; /* Center the content horizontally */
+    margin-left: 240px; /*Offset to avoid navbar */
+    padding: 10px;
+    flex-grow: 1; /* Allow content to take up remaining space */
+    align-items: right;
+}
+
+/* Cart Item Styles */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px; /* Limit the width of the cart items */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    align-items: right;
+    margin-top: 100px; 
+
+}
+
+/* Image Styling for Cart */
+.item-image1 img {
+    width: 120px;          /* Fixed size for consistency */
+    height: 120px;         /* Fixed size for consistency */
+    object-fit: cover;     /* Ensures the image covers the area without distortion */
+    border-radius: 8px;    /* Rounded corners */
+    border: 2px solid #ccc; /* Optional border for better definition */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    align-items: right;
+    margin-bottom: 0px;
+}
+.item-image2 img {
+    width: 120px;          /* Fixed size for consistency */
+    height: 120px;         /* Fixed size for consistency */
+    object-fit: cover;     /* Ensures the image covers the area without distortion */
+    border-radius: 8px;    /* Rounded corners */
+    border: 2px solid #ccc; /* Optional border for better definition */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    align-items: right;
+    margin-top: 0px;
+}
+
+.item-image img:hover {
+    transform: scale(1.05); /* Slightly zooms the image when hovered */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.item-details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.item-details h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.price {
+    font-size: 18px;
+    color: #000;
+    margin: 10px 0;
+}
+
+.date {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.quantity-btn {
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+    background-color: #ddd;
+}
+
+.remove-btn {
+    padding: 10px 15px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #e60000;
+}
+
+  footer {
+    position: absolute; /* Fix it at the bottom of the page */
+    bottom: 0; /* Align footer at the bottom */
+    width: 100%; /* Full width */
+    padding: 20px 0; /* Add padding */
+    text-align: center; /* Center the footer text */
+    color: gray; /* Gray text color */
+    background: none; /* No background */
+  }
+  
+  .footer-separator {
+    width: 100%; /* Full page width */
+    height: 1px; /* Thin separator line */
+    background-color: lightgray; /* Light gray line color */
+    margin-bottom: 20px; /* Space below the separator */
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    display: flex; /* Flexbox for link arrangement */
+    justify-content: center; /* Center the links horizontally */
+    align-items: center; /* Vertically align the links */
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+  }
+  
+  .footer-links a {
+    color: #7a7a7a; /* Gray link color */
+    margin: 0 20px;
+  
+  /* Spacing between links */
+    font-size: 16px; /* Font size for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .footer-links a:hover {
+    color: black; /* Change color to black on hover */
+    font-size: 17px;
+  }

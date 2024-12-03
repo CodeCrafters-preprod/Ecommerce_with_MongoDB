@@ -1,0 +1,255 @@
+/* META DATA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Developer details:
+    Name: Khushboo Mittal
+    Role: Architect
+*/
+
+/* Version:
+    Version: V 1.0 (26 November 2024)
+    Developers: Khushboo Mittal
+    Unit test: Pass
+    Integration test: Pass
+*/
+
+/* Description:
+    This is the CSS file for the homepage of a modern, interactive e-commerce website. It provides styling for a user-friendly, responsive layout, 
+    allowing visitors to browse products such as shoes, apparels, bags, and more. The website offers AI-powered live predictions and a seamless shopping experience.
+*/
+
+/* Dependencies:
+    - Custom CSS for responsive layout and modern design patterns.
+    - Uses CSS3 features for animations and transitions for smooth user interaction.
+    - Implements Flexbox and Grid for a flexible and dynamic layout across devices.
+*/
+
+/* To use: Link this CSS file to the homepage HTML for the e-commerce website.
+
+    Example:
+    <link rel="stylesheet" href="homepage.css">
+*/
+/*-------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Overall body styling */
+body {
+  background-image: url('../assets/Infographics/background.png'); /* Set the background image for the page */
+  background-size: cover; /* Ensure the background image covers the entire screen */
+  background-position: center center; /* Center the background image */
+  background-attachment: fixed; /* Keep the background image fixed when scrolling */
+  margin: 0; /* Remove the default margin around the body */
+  font-family: 'Arial', sans-serif; /* Use a clean sans-serif font for text */
+  display: flex; /* Use flexbox layout for the body */
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center-align items horizontally */
+}
+  
+/* Sign Up Button */
+.signup-btn {
+  position: absolute; /* Position the button relative to the screen */
+  top: 20px; /* Place the button 20px from the top */
+  right: 20px; /* Place the button 20px from the right */
+  background-color: black; /* Black background for the button */
+  color: white; /* White text for contrast */
+  padding: 10px 20px; /* Add padding for better click area */
+  border: none; /* Remove the border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change the cursor to pointer on hover */
+}
+
+.signup-btn:hover {
+  background-color: #555; /* Dark gray background on hover */
+}
+
+/* Brand Logo and Name */
+.brand-logo {
+  text-align: center; /* Center-align text and content */
+  margin-top: 20px; /* Add space above the logo */
+}
+
+/* Circular Logo Placeholder */
+.logo-placeholder {
+  width: 80px; /* Width of the circular logo container */
+  height: 80px; /* Height of the circular logo container */
+  margin: 0 auto 10px; /* Center the container and add bottom margin */
+  border-radius: 50%; /* Make the container circular */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Horizontally align items */
+  overflow: hidden; /* Ensure any overflow is hidden */
+  border: none !important; /* Forcefully remove any borders */
+  box-shadow: none !important; /* Remove any box shadows */
+  outline: none !important; /* Remove outlines */
+  background-color: transparent; /* Transparent background */
+  background-size: cover; /* Make the background cover the container */
+  background-position: center center; /* Center the background image */
+}
+
+.logo-image {
+  width: 100%; /* Image takes the full width of the container */
+  height: 100%; /* Image takes the full height of the container */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+h1 {
+  font-family: 'Rakkas', serif; /* Use the Rakkas font for the brand name */
+  font-size: 40px; /* Set the font size */
+  font-weight: 700; /* Bold font weight */
+  margin: 0; /* Remove margin */
+}
+
+.fashion-text {
+  font-family: 'Faculty Glyphic', serif; /* Use Faculty Glyphic font for "Fashion" */
+  font-size: 20px; /* Set font size */
+  margin-top: -10px; /* Adjust vertical spacing */
+  text-transform: uppercase; /* Transform text to uppercase */
+  color: #555; /* Set text color to dark gray */
+  font-weight: 400; /* Regular font weight */
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  position: relative; /* Relative positioning for containing arrows */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the carousel horizontally */
+  align-items: center; /* Center the carousel vertically */
+  width: 80%; /* Width of the carousel */
+  margin: 20px auto; /* Center the carousel with margins */
+}
+
+/* Arrows */
+.carousel-arrow {
+  position: absolute; /* Position the arrows relative to the carousel wrapper */
+  top: 50%; /* Position arrows vertically at the center */
+  transform: translateY(-50%); /* Adjust positioning to center */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  color: white; /* White arrow color */
+  border: none; /* Remove borders */
+  padding: 10px; /* Add padding */
+  font-size: 24px; /* Large arrow size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 50%; /* Circular arrows */
+  z-index: 1; /* Ensure arrows are above other content */
+}
+
+.carousel-arrow.left {
+  left: 10px; /* Position the left arrow */
+}
+
+.carousel-arrow.right {
+  right: 10px; /* Position the right arrow */
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+/* Carousel */
+.carousel {
+  display: flex; /* Arrange items in a row */
+  overflow-x: hidden; /* Hide overflowing content */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  width: 99%; /* Carousel width */
+  margin: 20px auto; /* Center the carousel with margins */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on touch devices */
+}
+
+/* Adjust size of carousel items */
+.carousel-item {
+  min-width: 700px; /* Minimum width for each carousel item */
+  margin: 10px; /* Space between items */
+  text-align: center; /* Center-align content */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure no overflow is visible */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease-in-out; /* Smooth scale effect */
+}
+
+/* Ensure the images fill the space appropriately */
+.carousel-item img {
+  width: 100%; /* Image width fills the container */
+  height: 100%; /* Image height fills the container */
+  object-fit: cover; /* Maintain image proportions */
+}
+
+.carousel-item:hover {
+  transform: scale(1.05); /* Slightly enlarge item on hover */
+}
+
+/* Hide the scrollbar */
+.carousel::-webkit-scrollbar {
+  display: none; /* Remove the scrollbar */
+}
+
+/* Login Section */
+.login-container {
+  display: flex; /* Arrange login fields and button in a row */
+  justify-content: center; /* Center-align fields horizontally */
+  align-items: center; /* Center-align fields vertically */
+  gap: 10px; /* Add space between fields */
+  margin: 20px 0 40px; /* Add top and bottom spacing */
+}
+
+.input-field {
+  width: 300px; /* Set width of input fields */
+  padding: 10px; /* Add padding */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white; /* White text */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Larger font size for readability */
+  outline: none; /* Remove default focus outline */
+  text-align: center; /* Center-align input text */
+}
+
+.input-field::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Semi-transparent white placeholder */
+  text-align: center; /* Center-align placeholder text */
+}
+
+.login-button {
+  width: 100px; /* Button width */
+  padding: 10px; /* Add padding */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white; /* White text */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Larger font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center; /* Center-align button text */
+}
+
+.login-button:hover {
+  background-color: rgba(0, 0, 0, 0.9); /* Darker background on hover */
+}
+
+/* Footer Styling */
+footer {
+  padding: 20px 0; /* Add padding to the top and bottom of the footer */
+}
+
+.footer-separator {
+  width: 100%; /* Separator spans the full width */
+  height: 1px; /* Thin separator line */
+  background-color: lightgray; /* Light gray color for separator */
+  margin-bottom: 20px; /* Space below separator */
+}
+
+.footer-links {
+  display: flex; /* Arrange footer links in a row */
+  justify-content: space-between; /* Spread links evenly */
+  align-items: center; /* Center-align links vertically */
+  flex-wrap: wrap; /* Wrap links to the next line on small screens */
+}
+
+.footer-links a {
+  color: #7a7a7a; /* Dark gray link color */
+  margin: 0 20px; /* Space between links */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Set font size */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.footer-links a:hover {
+  color: black; /* Change link color to black on hover */
+}
