@@ -70,18 +70,18 @@ To Run:
         <span class="first-name">chris</span> <span class="last-name">DAVE</span>
       </h2>
     </div>
-    <!-- Navigation links to other sections of the website -->
-    <a href="{{ url_for('personal_details') }}">Personal Details</a>
-    <a href="{{ url_for('recommended') }}">Recommended</a>
-    <a href="{{ url_for('order_history') }}">Order History</a>
-    <a href="{{ url_for('shop') }}">Shop</a>
-    <!-- Cart link displaying item count dynamically -->
-    <a href="{{ url_for('cart') }}" id="cart-link">Cart (0)</a>
-    <a href="{{ url_for('homepage') }}">Logout</a>
+     <!-- Navigation links to other sections of the website -->
+     <a href="{{ url_for('personal_details') }}">Personal Details</a>
+     <a href="{{ url_for('recommended') }}">Recommended</a>
+     <a href="{{ url_for('order_history') }}">Order History</a>
+     <a href="{{ url_for('shop') }}">Shop</a>
+     <!-- Cart link displaying item count dynamically -->
+     <a href="{{ url_for('cart') }}" id="cart-link">Cart (0)</a>
+     <a href="{{ url_for('homepage') }}">Logout</a>
   </div>
   
   <div class="category-navbar">
-    <button data-category="footwear">Footwear</button>
+    <button data-category="footwear" class="active">Footwear</button>
     <button data-category="fragrance">Fragrance</button>
     <button data-category="apparels">Apparels</button>
     <button data-category="bags">Bags</button>

@@ -2,7 +2,7 @@
 <!-- META DATA -->
 <!--
 Developer Details:
-    Name: Tanisha Priya
+    Name: Prachi Tavse, Tanisha Priya
     Role: Frontend Developer
 
 Version:
@@ -70,17 +70,16 @@ To Run:
         <span class="first-name">chris</span> <span class="last-name">DAVE</span>
       </h2>
     </div>
-    <!-- Navigation links to other sections of the website -->
-    <a href="{{ url_for('personal_details') }}">Personal Details</a>
-    <a href="{{ url_for('recommended') }}">Recommended</a>
-    <a href="{{ url_for('order_history') }}">Order History</a>
-    <a href="{{ url_for('shop') }}">Shop</a>
-    <a href="{{ url_for('cart') }}" id="cart-link">Cart (0)</a>
-    <a href="{{ url_for('homepage') }}">Logout</a>
+     <!-- Navigation links to other sections of the website -->
+     <a href="{{ url_for('personal_details') }}">Personal Details</a>
+     <a href="{{ url_for('recommended') }}">Recommended</a>
+     <a href="{{ url_for('order_history') }}">Order History</a>
+     <a href="{{ url_for('shop') }}">Shop</a>
+     <a href="{{ url_for('cart') }}" id="cart-link">Cart (0)</a>
+     <a href="{{ url_for('homepage') }}">Logout</a>
   </div>
 
   <div class="cart-container" id="cart-container">
-    <div id="empty-cart-message" style="display: none;">Your cart is empty.</div>
     <!-- Cart items will be dynamically inserted here by JS -->
   </div>
 

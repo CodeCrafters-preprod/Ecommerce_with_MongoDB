@@ -23,25 +23,38 @@
 // Sample data for each category with product details (id, name, price, etc.)
 const categories = {
   footwear: [
-    { id: 1, name: 'Bellies', image: '../assets/Shoes/12.png', price: 50, description: 'Comfortable running shoes' },
-    { id: 2, name: 'Heels', image: '../assets/Shoes/13.png', price: 80, description: 'Durable winter boots' },
-    { id: 3, name: 'Heels', image: '../assets/Shoes/14.png', price: 20, description: 'Perfect for summer' },
-    { id: 4, name: 'Shoes', image: '../assets/Shoes/15.png', price: 30, description: 'Cozy home slippers' },
+    { id: 1, name: 'Bellies', image: '../../assets/Shoes/10.png', price: 50, description: 'Comfortable running shoes', delivery: '31 Dec 2024'},
+    { id: 2, name: 'Heels', image: '../../assets/Shoes/13.png', price: 80, description: 'Durable winter boots', delivery: '31 Dec 2024' },
+    { id: 3, name: 'Heels', image: '../../assets/Shoes/14.png', price: 20, description: 'Perfect for summer', delivery: '31 Dec 2024' },
+    { id: 4, name: 'Shoes', image: '../../assets/Shoes/15.png', price: 30, description: 'Cozy home slippers', delivery: '31 Dec 2024' },
+    // Adding more items to demonstrate scrolling 
+    { id: 5, name: 'Bellies', image: '../../assets/Shoes/10.png', price: 50, description: 'Comfortable running shoes', delivery: '31 Dec 2024'},
+    { id: 6, name: 'Heels', image: '../../assets/Shoes/13.png', price: 80, description: 'Durable winter boots', delivery: '31 Dec 2024' },
+    { id: 7, name: 'Heels', image: '../../assets/Shoes/14.png', price: 20, description: 'Perfect for summer', delivery: '31 Dec 2024' },
+    { id: 8, name: 'Shoes', image: '../../assets/Shoes/15.png', price: 30, description: 'Cozy home slippers', delivery: '31 Dec 2024' },
+    { id: 9, name: 'Bellies', image: '../../assets/Shoes/10.png', price: 50, description: 'Comfortable running shoes', delivery: '31 Dec 2024'},
+    { id: 10, name: 'Heels', image: '../../assets/Shoes/13.png', price: 80, description: 'Durable winter boots', delivery: '31 Dec 2024' },
+    { id: 11, name: 'Heels', image: '../../assets/Shoes/14.png', price: 20, description: 'Perfect for summer', delivery: '31 Dec 2024' },
+    { id: 12, name: 'Shoes', image: '../../assets/Shoes/15.png', price: 30, description: 'Cozy home slippers', delivery: '31 Dec 2024' },
+    { id: 13, name: 'Bellies', image: '../../assets/Shoes/10.png', price: 50, description: 'Comfortable running shoes', delivery: '31 Dec 2024'},
+    { id: 14, name: 'Heels', image: '../../assets/Shoes/13.png', price: 80, description: 'Durable winter boots', delivery: '31 Dec 2024' },
+    { id: 15, name: 'Heels', image: '../../assets/Shoes/14.png', price: 20, description: 'Perfect for summer', delivery: '31 Dec 2024' },
+    { id: 16, name: 'Shoes', image: '../../assets/Shoes/15.png', price: 30, description: 'Cozy home slippers', delivery: '31 Dec 2024' },
   ],
   fragrance: [
-    { id: 5, name: 'Perfume A', image: '../assets/Perfume/46.png', price: 60, description: 'Perfume for men' },
-    { id: 6, name: 'Perfume B', image: '../assets/Perfume/47.png', price: 70, description: 'Luxurius fragrance' },
-    { id: 7, name: 'Perfume C', image: '../assets/Perfume/48.png', price: 50, description: 'Woody fragrance' },
+    { id: 5, name: 'Perfume A', image: '../../assets/Perfume/46.png', price: 60, description: 'Perfume for men', delivery: '31 Dec 2024' },
+    { id: 6, name: 'Perfume B', image: '../../assets/Perfume/47.png', price: 70, description: 'Luxurius fragrance', delivery: '31 Dec 2024' },
+    { id: 7, name: 'Perfume C', image: '../../assets/Perfume/48.png', price: 50, description: 'Woody fragrance', delivery: '31 Dec 2024' },
   ],
   apparels: [
-    { id: 8, name: 'T-Shirt', image: '../assets/Tshirt/16.png', price: 25, description: 'Comfortable cotton t-shirt' },
-    { id: 9, name: 'T-shirt', image: '../assets/Tshirt/17.png', price: 40, description: 'Comfortable cotton t-shirt' },
-    { id: 10, name: 'Jacket', image: '../assets/Tshirt/18.png', price: 60, description: 'Warm winter hoodie' },
+    { id: 8, name: 'T-Shirt', image: '../../assets/Tshirt/16.png', price: 25, description: 'Comfortable cotton t-shirt', delivery: '31 Dec 2024' },
+    { id: 9, name: 'T-shirt', image: '../../assets/Tshirt/17.png', price: 40, description: 'Comfortable cotton t-shirt', delivery: '31 Dec 2024' },
+    { id: 10, name: 'Jacket', image: '../../assets/Tshirt/18.png', price: 60, description: 'Warm winter hoodie', delivery: '31 Dec 2024' },
   ],
   bags: [
-    { id: 11, name: 'Handbag', image: '../assets/Bag/31.png', price: 100, description: 'Elegant leather handbag' },
-    { id: 12, name: 'Handbag', image: '../assets/Bag/32.png', price: 50, description: 'Spacious and practical' },
-    { id: 13, name: 'Handbag', image: '../assets/Bag/33.png', price: 40, description: 'Elegant Handbag' },
+    { id: 11, name: 'Handbag', image: '../../assets/Bag/31.png', price: 100, description: 'Elegant leather handbag', delivery: '31 Dec 2024' },
+    { id: 12, name: 'Handbag', image: '../../assets/Bag/32.png', price: 50, description: 'Spacious and practical', delivery: '31 Dec 2024' },
+    { id: 13, name: 'Handbag', image: '../../assets/Bag/33.png', price: 40, description: 'Elegant Handbag', delivery: '31 Dec 2024' },
   ],
 };
 
@@ -80,12 +93,16 @@ const productDetailsDiv = document.getElementById('product-details');
 function openModal(item) {
   modal.style.display = 'block';
 
+  // Log item to debug
+  console.log("Item in openModal:", item);
+
   // Populate the modal with product details
   productDetailsDiv.innerHTML = `
     <img src="${item.image}" alt="Product Image" style="width: 100%; border-radius: 10px;"/>
     <h3>Category: ${item.name}</h3>
     <p>${item.description}</p>
     <p>Price: $${item.price}</p>
+    <p>Delivery: ${item.delivery}</p> <!-- Ensure delivery is displayed -->
     <button id="add-to-cart-btn" class="add-to-cart-btn">Add to Cart</button>
   `;
 
@@ -97,10 +114,14 @@ function openModal(item) {
 }
 
 
+
 // Add to Cart Functionality
 function addToCart(item) {
   // Retrieve the current cart items from localStorage (or initialize an empty array if not found)
   let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+  // Log item to debug
+  console.log("Item in addToCart:", item);
 
   // Check if the item is already in the cart
   const existingItemIndex = cartItems.findIndex(cartItem => cartItem.id === item.id);
@@ -110,12 +131,19 @@ function addToCart(item) {
     cartItems[existingItemIndex].quantity += 1;
   } else {
     // If it's a new item, add it to the cart with quantity 1
-    item.quantity = 1; // Set initial quantity to 1
-    cartItems.push(item);
+    cartItems.push({
+      id: item.id,
+      name: item.name,
+      image: item.image,
+      price: item.price,
+      quantity: 1, // Set initial quantity to 1
+      delivery: item.delivery // Include the delivery date
+    });
   }
 
   // Store the updated cart items back into localStorage
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  console.log("Updated Cart Items in localStorage:", cartItems);
 
   // Update the cart count in localStorage and the navbar
   let cartCount = cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0); // Sum up the quantities
@@ -128,6 +156,7 @@ function addToCart(item) {
   // Close the modal after adding to cart
   closeModal();
 }
+
 
 // Function to close the modal
 function closeModal() {

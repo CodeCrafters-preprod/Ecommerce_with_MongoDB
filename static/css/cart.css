@@ -2,7 +2,7 @@
 <!-- META DATA -->
 <!--
 Developer Details:
-    Name: Tanisha Priya
+    Name: Prachi Tavse, Tanisha Priya
     Role: Frontend Developer
 
 Version:
@@ -38,7 +38,7 @@ body {
 
 /* Brand Logo and Name (Top Left) */
 .brand-logo {
-    position: absolute; /* Position the logo in the top-left corner */
+    position: fixed; /* Position the logo in the top-left corner */
     top: 20px;
     left: 20px;
     text-align: left; /* Align text to the left */
@@ -155,104 +155,82 @@ h1 {
     text-transform: uppercase; /* Convert last name to uppercase */
 }
 
-/* Main Content Area (Images and Details) */
+/* Main Content Area (Cart and Items) */
 .cart-container {
     display: flex;
     flex-direction: column; /* Align items vertically */
     justify-content: flex-start;
-    align-items: right; /* Center the content horizontally */
-    margin-left: 240px; /*Offset to avoid navbar */
-    padding: 10px;
-    flex-grow: 1; /* Allow content to take up remaining space */
-    align-items: right;
+    margin-left: 240px; /* Offset to avoid navbar */
+    box-sizing: border-box;  /* Includes padding within the height calculation */
+    padding: 0 20px 70px 40px;  /* Add padding but ensures it doesn't increase the container size */
+    flex-grow: 1;
+    overflow-y: auto;  /* Enables scrolling if content overflows */
 }
 
 /* Cart Item Styles */
 .cart-item {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    max-width: 900px; /* Limit the width of the cart items */
-    margin-bottom: 20px;
+    align-items: center;
     border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
-    align-items: right;
-    margin-top: 100px; 
-
+    padding: 15px 0;
 }
 
-/* Image Styling for Cart */
-.item-image1 img {
-    width: 120px;          /* Fixed size for consistency */
-    height: 120px;         /* Fixed size for consistency */
-    object-fit: cover;     /* Ensures the image covers the area without distortion */
-    border-radius: 8px;    /* Rounded corners */
-    border: 2px solid #ccc; /* Optional border for better definition */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
-    align-items: right;
-    margin-bottom: 0px;
-}
-.item-image2 img {
-    width: 120px;          /* Fixed size for consistency */
-    height: 120px;         /* Fixed size for consistency */
-    object-fit: cover;     /* Ensures the image covers the area without distortion */
-    border-radius: 8px;    /* Rounded corners */
-    border: 2px solid #ccc; /* Optional border for better definition */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
-    align-items: right;
-    margin-top: 0px;
+.cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.item-image img:hover {
-    transform: scale(1.05); /* Slightly zooms the image when hovered */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-.item-details {
+.cart-item-details {
     flex-grow: 1;
     margin-left: 20px;
 }
 
-.item-details h2 {
-    font-size: 20px;
-    color: #333;
-}
-
-.price {
+.cart-item-details h3 {
     font-size: 18px;
-    color: #000;
-    margin: 10px 0;
+    margin-bottom: 5px;
 }
 
-.date {
+.cart-item-details p {
+    margin: 5px 0;
+}
+
+.cart-item button {
+    padding: 8px 12px;
     font-size: 14px;
-    color: #777;
-    margin-bottom: 10px;
-}
-
-.quantity {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.quantity-btn {
-    font-size: 18px;
-    padding: 5px 10px;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.quantity-btn:hover {
+.cart-item .increase-quantity,
+.cart-item .decrease-quantity {
+    background-color: #f1f1f1;
+    color: black;
+    margin: 0 5px;
+}
+
+.cart-item .increase-quantity:hover,
+.cart-item .decrease-quantity:hover {
     background-color: #ddd;
 }
 
-.remove-btn {
+.cart-item .remove-item {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.cart-item .remove-item:hover {
+    background-color: #e60000;
+}
+
+/* Clear Cart Button */
+#clear-cart-btn {
     padding: 10px 15px;
     background-color: #ff4d4d;
     color: white;
@@ -260,20 +238,27 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 20px;
+    align-self: flex-end;
 }
 
-.remove-btn:hover {
+#clear-cart-btn:hover {
     background-color: #e60000;
 }
 
+.content {
+    flex: 1;
+    padding-bottom: 80px; /* Space for footer */
+}
+
   footer {
-    position: absolute; /* Fix it at the bottom of the page */
+    position: fixed; /* Fix it at the bottom of the page */
     bottom: 0; /* Align footer at the bottom */
     width: 100%; /* Full width */
-    padding: 20px 0; /* Add padding */
+    padding: 0 20px 20px 20px; /* Add padding */
     text-align: center; /* Center the footer text */
     color: gray; /* Gray text color */
-    background: none; /* No background */
+    background: white; /* No background */
   }
   
   .footer-separator {

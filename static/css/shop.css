@@ -38,7 +38,7 @@ body {
   
   /* Brand Logo and Name (Top Left) */
   .brand-logo {
-    position: absolute; /* Position the logo in the top-left corner */
+    position: fixed; /* Position the logo in the top-left corner */
     top: 20px;
     left: 20px;
     text-align: left; /* Align text to the left */
@@ -224,6 +224,8 @@ body {
     gap: 20px;
     /* Center-align grid items */
     justify-items: center;
+    flex-grow: 1;
+    padding: 0 20px 70px 40px;
   }
 
   /* Style for individual image containers */
@@ -308,10 +310,10 @@ body {
     position: fixed; /* Fix it at the bottom of the page */
     bottom: 0; /* Align footer at the bottom */
     width: 100%; /* Full width */
-    padding: 20px 0; /* Add padding */
+    padding: 0 20px 20px 20px; /* Add padding */
     text-align: center; /* Center the footer text */
     color: gray; /* Gray text color */
-    background: none; /* No background */
+    background: white; /* No background */
     margin-top: 50px;
   }
   
