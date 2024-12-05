@@ -1,0 +1,67 @@
+{
+    "footwear": [
+      {
+        "id": 3,
+        "name": "Bellies",
+        "price": 50,
+        "description": "Comfortable running shoes",
+        "delivery": "31 Dec 2024"
+      },
+      {
+        "id": 2,
+        "name": "Heels",
+        "price": 80,
+        "description": "Durable winter boots",
+        "delivery": "31 Dec 2024"
+      }
+    ],
+    "fragrance": [
+      {
+        "id": 46,
+        "name": "Perfume A",
+        "price": 60,
+        "description": "Perfume for men",
+        "delivery": "31 Dec 2024"
+      },
+      {
+        "id": 47,
+        "name": "Perfume B",
+        "price": 70,
+        "description": "Luxurious fragrance",
+        "delivery": "31 Dec 2024"
+      }
+    ],
+    "apparels": [
+      {
+        "id": 16,
+        "name": "T-Shirt",
+        "price": 25,
+        "description": "Comfortable cotton t-shirt",
+        "delivery": "31 Dec 2024"
+      },
+      {
+        "id": 17,
+        "name": "T-shirt",
+        "price": 40,
+        "description": "Comfortable cotton t-shirt",
+        "delivery": "31 Dec 2024"
+      }
+    ],
+    "bags": [
+      {
+        "id": 31,
+        "name": "Handbag",
+        "price": 100,
+        "description": "Elegant leather handbag",
+        "delivery": "31 Dec 2024"
+      },
+      {
+        "id": 32,
+        "name": "Handbag",
+        "price": 50,
+        "description": "Spacious and practical",
+        "delivery": "31 Dec 2024"
+      }
+    ]
+  }
+  

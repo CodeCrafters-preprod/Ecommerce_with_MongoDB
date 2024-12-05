@@ -1,24 +1,40 @@
-from flask import Flask, render_template, send_from_directory, send_file
-import gridfs
+from flask import Flask, jsonify, render_template, send_from_directory, send_file
+from gridfs import GridFS
+import pymongo
 from bson.objectid import ObjectId
 import os
-from flask_pymongo import PyMongo
-from PIL import Image
-import io
+from io import BytesIO
 
 app = Flask(__name__)
 # MongoDB Configuration
-app.config["MONGO_URI"] = "mongodb://localhost:27017/recommendations"  # Replace with your DB URI
-mongo = PyMongo(app)
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+db = client["EcommerceSite"]
+fs = GridFS(db)
 
-# Set up GridFS for storing images
-fs = gridfs.GridFS(mongo.db)
+# Get images by category
+@app.route('/images/<category>', methods=['GET'])
+def get_images(category):
+    images = []
+    for item in db[category].find():
+        image = fs.get(item["image_id"])
+        images.append({
+            "id": item["id"],
+            "name": item["name"],
+            "price": item["price"],
+            "description": item["description"],
+            "delivery": item["delivery"],
+            "image_url": f"/image/{item['image_id']}"
+        })
+    return jsonify(images)
 
-@app.route('/get_image/<image_id>')
+# Serve individual images
+@app.route('/image/<image_id>', methods=['GET'])
 def get_image(image_id):
-    # Retrieve image from MongoDB using its ObjectId
-    image = fs.get(ObjectId(image_id))
-    return send_file(io.BytesIO(image.read()), mimetype='image/png')
+    try:
+        file = fs.get(ObjectId(image_id))
+        return send_file(BytesIO(file.read()), mimetype='image/png')
+    except Exception as e:
+        return jsonify({"error": str(e)}), 404
 
 @app.route('/')
 def homepage():
