@@ -31,6 +31,8 @@ from gridfs import GridFS
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["EcommerceSite"]
 fs = GridFS(db)
+# Separate GridFS instances for different collections
+fs_recommended = GridFS(db, collection="recommended")
 
 # File paths
 assets_dir = "assets"
@@ -56,15 +58,16 @@ def upload_images_with_metadata():
                 print(f"Error uploading {item['name']}: {e}")
     print("Images with metadata uploaded successfully!")
 
-# Upload raw images
+
+# Upload function
 def upload_raw_images(folder_name):
     folder_path = os.path.join(assets_dir, folder_name)
     for filename in os.listdir(folder_path):
         if filename.endswith(".png"):
             image_path = os.path.join(folder_path, filename)
             with open(image_path, 'rb') as img_file:
-                fs.put(img_file, filename=filename)
-    print(f"Raw images from {folder_name} uploaded successfully!")
+                fs_recommended.put(img_file, filename=filename)
+    print(f"Images from {folder_name} uploaded successfully!")
 
 # Call upload functions
 upload_images_with_metadata()

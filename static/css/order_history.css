@@ -167,6 +167,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 220px;
 }
 
 .order-details h2 {
@@ -185,12 +186,18 @@ h2 {
   margin-top: 160px;
 }
 
-.image-gallery {
+.order-details .image-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
-  gap: 20px; /* Space between images */
-  justify-items: center;
-  /* margin-top: 160px; */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 15px; /* Space between grid items */
+  padding: 10px;
+}
+
+.order-details .image-gallery img {
+  max-width: 100%; /* Ensures images fit within their grid cell */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 5px; /* Optional: for rounded corners */
+  object-fit: cover; /* Ensures the image fills the container */
 }
 
 .image-container {

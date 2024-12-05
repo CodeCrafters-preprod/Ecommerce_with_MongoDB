@@ -90,7 +90,7 @@
         <div class="carousel">
           {% for image_id in image_ids %}
             <div class="carousel-item">
-              <img src="{{ url_for('get_image', image_id=image_id) }}" alt="Product Image"> 
+              <img src="{{ url_for('get_recommended_image', image_id=image_id) }}" alt="Product Image"> 
             </div>
           {% endfor %}
         </div>
