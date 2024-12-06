@@ -26,14 +26,16 @@
 //     Open the `cart.html` file in a modern web browser.
 // -->
 
-// API endpoint URLs
-const API_BASE_URL = 'http://localhost:5000'; // Replace with your actual backend URL
-const CART_API_URL = `${API_BASE_URL}/cart`; // Assuming you have a '/cart' endpoint
+// --- API endpoint URLs ---
+const API_BASE_URL = 'http://localhost:5000'; // Base URL for backend API; update this to match your backend's URL.
+const CART_API_URL = `${API_BASE_URL}/cart`; // Endpoint for cart-related operations, built dynamically.
 
+// --- Function to render cart items on the page ---
 function renderCart() {
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const cartContainer = document.getElementById('cart-container');
-    
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Retrieve cart items from localStorage or initialize as an empty array.
+    const cartContainer = document.getElementById('cart-container'); // Get the container element where cart items will be displayed.
+
+    // Check if there are items in the cart and render them, else display a message indicating the cart is empty.
     cartContainer.innerHTML = cartItems.length > 0 
       ? cartItems.map(item => `
         <div class="cart-item" data-id="${item.id}">
@@ -50,65 +52,72 @@ function renderCart() {
             <button class="remove-item" data-id="${item.id}">Remove</button>
           </div>
         </div>
-      `).join('')
-      : `<p>Your cart is empty.</p>`;
-    
-    updateCartCount(); // Ensure the count is updated every time the cart is rendered
+      `).join('') // Generate HTML for each cart item and join them into a single string.
+      : `<p>Your cart is empty.</p>`; // Fallback if no items are in the cart.
+
+    updateCartCount(); // Update the cart item count in the UI.
 }
 
+// --- Function to update cart count displayed in the navbar ---
 function updateCartCount() {
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Get cart items or initialize as an empty array.
+    const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0); // Calculate total item count based on quantities.
 
-    localStorage.setItem('cartCount', cartCount);
+    localStorage.setItem('cartCount', cartCount); // Store updated cart count in localStorage.
 
-    const cartLink = document.getElementById('cart-link');
-    cartLink.textContent = `Cart (${cartCount})`; // Update the navbar count
+    const cartLink = document.getElementById('cart-link'); // Find the navbar element displaying the cart count.
+    cartLink.textContent = `Cart (${cartCount})`; // Update its text content with the new count.
 }
 
+// --- Function to increase the quantity of an item in the cart ---
 function increaseQuantity(itemId) {
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const itemIndex = cartItems.findIndex(item => item.id === parseInt(itemId));
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Fetch cart items from localStorage.
+    const itemIndex = cartItems.findIndex(item => item.id === parseInt(itemId)); // Find the item in the cart by its ID.
 
-    if (itemIndex > -1) {
-        cartItems[itemIndex].quantity += 1;
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        renderCart();
+    if (itemIndex > -1) { // If the item exists in the cart:
+        cartItems[itemIndex].quantity += 1; // Increment the item's quantity.
+        localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Save the updated cart back to localStorage.
+        renderCart(); // Re-render the cart UI.
     }
 }
 
+// --- Function to decrease the quantity of an item in the cart ---
 function decreaseQuantity(itemId) {
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const itemIndex = cartItems.findIndex(item => item.id === parseInt(itemId));
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Fetch cart items from localStorage.
+    const itemIndex = cartItems.findIndex(item => item.id === parseInt(itemId)); // Find the item in the cart by its ID.
 
-    if (itemIndex > -1) {
+    if (itemIndex > -1) { // If the item exists in the cart:
         if (cartItems[itemIndex].quantity > 1) {
-            cartItems[itemIndex].quantity -= 1;
+            cartItems[itemIndex].quantity -= 1; // Decrease quantity if greater than 1.
         } else {
-            cartItems.splice(itemIndex, 1); // Remove the item if quantity is 0
+            cartItems.splice(itemIndex, 1); // Remove the item if quantity becomes 0.
         }
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        renderCart();
+        localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Save the updated cart back to localStorage.
+        renderCart(); // Re-render the cart UI.
     }
 }
 
+// --- Function to remove an item from the cart ---
 function removeItem(itemId) {
-    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    cartItems = cartItems.filter(item => item.id !== parseInt(itemId));
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Fetch cart items from localStorage.
+    cartItems = cartItems.filter(item => item.id !== parseInt(itemId)); // Filter out the item to be removed.
 
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    renderCart();
+    localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Save the updated cart back to localStorage.
+    renderCart(); // Re-render the cart UI.
 }
 
+// --- Function to clear all items from the cart ---
 function clearCart() {
-    localStorage.removeItem('cartItems');
-    localStorage.setItem('cartCount', 0);
-    renderCart();
+    localStorage.removeItem('cartItems'); // Remove the cart items from localStorage.
+    localStorage.setItem('cartCount', 0); // Reset the cart count in localStorage.
+    renderCart(); // Clear the cart UI.
 }
 
+// --- Event listener for cart actions ---
 document.getElementById('cart-container').addEventListener('click', (event) => {
-    const itemId = event.target.dataset.id;
+    const itemId = event.target.dataset.id; // Get the ID of the clicked item.
 
+    // Determine the action based on the button clicked and call the appropriate function.
     if (event.target.classList.contains('increase-quantity')) {
         increaseQuantity(itemId);
     } else if (event.target.classList.contains('decrease-quantity')) {
@@ -118,11 +127,12 @@ document.getElementById('cart-container').addEventListener('click', (event) => {
     }
 });
 
+// --- Initialize cart on page load ---
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded');
-    renderCart();
+    console.log('DOM fully loaded'); // Log a message for debugging.
+    renderCart(); // Render the cart when the page loads.
 
-    // Add event listener for the "Clear Cart" button
+    // Add event listener for the "Clear Cart" button if it exists.
     const clearCartButton = document.getElementById('clear-cart-btn');
     if (clearCartButton) {
         clearCartButton.addEventListener('click', () => {
@@ -131,16 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
 // --- Navbar Username Update ---
-// Retrieve the username from localStorage
-const username = localStorage.getItem("username") || "Chris Dave";
+const username = localStorage.getItem("username") || "Chris Dave"; // Retrieve the username from localStorage or set a default.
 
-// Split the username into first and last names
-const nameParts = username.split(" ");
-const firstName = nameParts.slice(0, -1).join(" ") || "Chris"; // Everything except the last word
-const lastName = nameParts.slice(-1).join(" ") || "DAVE"; // The last word
+const nameParts = username.split(" "); // Split the username into parts (first and last names).
+const firstName = nameParts.slice(0, -1).join(" ") || "Chris"; // Combine all but the last word as the first name.
+const lastName = nameParts.slice(-1).join(" ") || "DAVE"; // Use the last word as the last name.
 
-// Update the DOM elements with the names
+// Update the DOM elements with the extracted first and last names.
 document.querySelector(".first-name").textContent = firstName;
 document.querySelector(".last-name").textContent = lastName;
