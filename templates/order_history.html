@@ -85,7 +85,7 @@ To Run:
     <h2>Order Details</h2>
     <div class="image-gallery">
       {% for image_id in image_ids %}
-        <div class="carousel-item">
+        <div class="image-container">
           <img src="{{ url_for('get_image', image_id=image_id) }}" alt="Product Image"> 
         </div>
       {% endfor %}

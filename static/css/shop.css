@@ -24,7 +24,7 @@ body {
     font-family: Arial, sans-serif; /* Set the font family for the entire page */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    background: url('../assets/Infographics/background.png') no-repeat center center fixed; /* Set a fixed background image */
+    background: url('../background.png') no-repeat center center fixed; /* Set a fixed background image */
     background-size: cover; /* Ensures the image covers the entire background */
   }
 

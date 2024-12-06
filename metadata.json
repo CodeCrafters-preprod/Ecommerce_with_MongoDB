@@ -2,16 +2,16 @@
     "footwear": [
       {
         "id": 3,
-        "name": "Bellies",
+        "name": "Sneakers",
         "price": 50,
-        "description": "Comfortable running shoes",
+        "description": "Fashionable shoes",
         "delivery": "31 Dec 2024"
       },
       {
         "id": 2,
-        "name": "Heels",
+        "name": "Sneaker Shoes",
         "price": 80,
-        "description": "Durable winter boots",
+        "description": "Comfortable running shoes",
         "delivery": "31 Dec 2024"
       }
     ],

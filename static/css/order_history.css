@@ -31,7 +31,7 @@ body {
   font-family: Arial, sans-serif; /* Set the font family for the entire page */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
-  background: url('../assets/Infographics/background.png') no-repeat center center fixed; /* Set a fixed background image */
+  background: url('../background.png') no-repeat center center fixed; /* Set a fixed background image */
   background-size: cover; /* Ensures the image covers the entire background */
 }
 
@@ -176,63 +176,69 @@ h1 {
 }
 
 /* Image Gallery Styling */
-/* Image Gallery: Holds all images */
 .image-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; /* Center the images */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+  gap: 20px; /* Space between images */
+  justify-items: center;
+  /* margin-top: 160px; */
 }
 
-/* Each individual carousel item */
-.carousel-item {
-  max-width: 300px; /* Ensure images do not overflow horizontally */
-  width: 100%;
-  overflow: hidden;  /* Prevent images from overflowing */
+.image-container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Image Styling */
-.carousel-item img {
+.image-container img {
   width: 100%;
-  height: auto;  /* Maintain aspect ratio */
-  object-fit: contain;  /* Ensure images fit inside the container */
-  border-radius: 8px;  /* Optional: Adds a border radius to the images */
+  height: 100%;
+  object-fit: cover;
 }
 
 
 /* Footer styling */
 footer {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin-top: auto;  /* Pushes footer to the bottom */
+  position: fixed; /* Fix it at the bottom of the page */
+  bottom: 0; /* Align footer at the bottom */
+  width: 100%; /* Full width */
+  padding: 0 20px 20px 20px; /* Add padding */
+  text-align: center; /* Center the footer text */
+  color: gray; /* Gray text color */
+  background: white;
+  margin-top: 50px;
 }
 
 .footer-separator {
-  margin: 20px 0;
-  border-top: 1px solid #fff;
+  width: 100%; /* Full page width */
+  height: 1px; /* Thin separator line */
+  background-color: lightgray; /* Light gray line color */
+  margin-bottom: 20px; /* Space below the separator */
 }
 
-/* Footer links styling */
+  /* Footer Links */
+  .footer-links {
+    display: flex; /* Flexbox for link arrangement */
+    justify-content: center; /* Center the links horizontally */
+    align-items: center; /* Vertically align the links */
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+  }
+
 .footer-links a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
+  color: #7a7a7a; /* Gray link color */
+  margin: 0 20px;
+
+/* Spacing between links */
+  font-size: 16px; /* Font size for links */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .image-gallery {
-      flex-direction: column; /* Stack images vertically on smaller screens */
-  }
-
-  .carousel-item {
-      max-width: 100%; /* Allow images to take up full width on smaller screens */
-  }
+  color: black; /* Change color to black on hover */
+  font-size: 17px;
 }
 
