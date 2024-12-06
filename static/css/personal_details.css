@@ -25,7 +25,7 @@ body {
     font-family: Arial, sans-serif; /* Set the font family for the entire page */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    background: url('../assets/Infographics/background.png') no-repeat center center fixed; /* Set a fixed background image */
+    background: url('../background.png') no-repeat center center fixed; /* Set a fixed background image */
     background-size: cover; /* Ensures the image covers the entire background */
 }
 
@@ -312,39 +312,42 @@ input:focus {
 
 /* Footer Styling */
 footer {
-    position: absolute; /* Fix it at the bottom of the page */
+    position: fixed; /* Fix it at the bottom of the page */
     bottom: 0; /* Align footer at the bottom */
-    width: 100%; /* Full width to span across the page */
-    padding: 20px 0; /* Add padding to create space around the footer */
-    text-align: center; /* Center-align the footer content */
-    color: gray; /* Set text color to gray */
-    background: none; /* No background color for the footer */
-}
-
-.footer-separator {
-    width: 100%; /* Full width separator to span across the page */
-    height: 1px; /* Thin line for the separator */
-    background-color: lightgray; /* Light gray color for the separator */
-    margin-bottom: 20px; /* Add space below the separator */
-}
-
-/* Footer Links */
-.footer-links {
-    display: flex; /* Use flexbox for arranging the links */
+    width: 100%; /* Full width */
+    padding: 0 20px 20px 20px; /* Add padding */
+    text-align: center; /* Center the footer text */
+    color: gray; /* Gray text color */
+    background: white; /* No background */
+    margin-top: 50px;
+  }
+  
+  .footer-separator {
+    width: 100%; /* Full page width */
+    height: 1px; /* Thin separator line */
+    background-color: lightgray; /* Light gray line color */
+    margin-bottom: 20px; /* Space below the separator */
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    display: flex; /* Flexbox for link arrangement */
     justify-content: center; /* Center the links horizontally */
     align-items: center; /* Vertically align the links */
-    flex-wrap: wrap; /* Allow links to wrap onto a new line on smaller screens */
-}
-
-.footer-links a {
-    color: #7a7a7a; /* Set link text color to gray */
-    margin: 0 20px; /* Add spacing between links */
-    font-size: 16px; /* Font size for footer links */
-    text-decoration: none; /* Remove underlining from links */
-    transition: color 0.3s ease; /* Add smooth transition effect for color change */
-}
-
-.footer-links a:hover {
-    color: black; /* Change link color to black on hover */
-    font-size: 17px; /* Slightly increase font size on hover */
-}
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+  }
+  
+  .footer-links a {
+    color: #7a7a7a; /* Gray link color */
+    margin: 0 20px;
+  
+  /* Spacing between links */
+    font-size: 16px; /* Font size for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .footer-links a:hover {
+    color: black; /* Change color to black on hover */
+    font-size: 17px;
+  }

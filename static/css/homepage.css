@@ -32,7 +32,7 @@
 
 /* Overall body styling */
 body {
-  background-image: url('../assets/Infographics/background.png'); /* Set the background image for the page */
+  background-image: url('../background.png'); /* Set the background image for the page */
   background-size: cover; /* Ensure the background image covers the entire screen */
   background-position: center center; /* Center the background image */
   background-attachment: fixed; /* Keep the background image fixed when scrolling */
@@ -226,6 +226,7 @@ h1 {
 /* Footer Styling */
 footer {
   padding: 20px 0; /* Add padding to the top and bottom of the footer */
+  background: white;
 }
 
 .footer-separator {

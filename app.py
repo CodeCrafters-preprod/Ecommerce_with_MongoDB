@@ -59,7 +59,7 @@ def homepage():
     recommended_files = fs_recommended.find()  # Fetch files from 'recommended' collection
     recommended_image_ids = [str(image._id) for image in recommended_files]  # Collect image IDs
     # Render the page with the list of recommended image IDs
-    return render_template('recommended.html', image_ids=recommended_image_ids)
+    return render_template('homepage.html', image_ids=recommended_image_ids)
 
 
 @app.route('/recommended')

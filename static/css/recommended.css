@@ -31,7 +31,7 @@ body {
     font-family: Arial, sans-serif; /* Set the font family for the entire page */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    background: url('../assets/Infographics/background.png') no-repeat center center fixed; /* Set a fixed background image */
+    background: url('../background.png') no-repeat center center fixed; /* Set a fixed background image */
     background-size: cover; /* Ensures the image covers the entire background */
 }
 
@@ -224,13 +224,13 @@ h1 {
 
 /* Footer Styling */
 footer {
-    position: absolute; /* Fix it at the bottom of the page */
+    position: fixed; /* Fix it at the bottom of the page */
     bottom: 0; /* Align footer at the bottom */
     width: 100%; /* Full width */
     padding: 20px 0; /* Add padding */
     text-align: center; /* Center the footer text */
     color: gray; /* Gray text color */
-    background: none; /* No background */
+    background: white;
 }
 
 .footer-separator {
